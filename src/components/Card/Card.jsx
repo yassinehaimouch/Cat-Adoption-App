@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Card.css";
-import heartFilled from "./svgs/heartFilled.svg";
-import heartOutlined from "./svgs/heartOutlined.svg";
+import heartFilled from "../../svgs/heartFilled.svg";
+import heartOutlined from "../../svgs/heartOutlined.svg";
 
 const Card = ({ name, phone, email, image, favoured }) => {
   const [isFavoured, setIsFavoured] = useState(favoured);
@@ -9,7 +9,7 @@ const Card = ({ name, phone, email, image, favoured }) => {
     setIsFavoured(!isFavoured);
   }
   return (
-    <div className="card">
+    <article className="card">
       <div className="card-header">
         <img src={image.url} alt={image.alt} className="card-img" />
         <button className="heart" onClick={toggleFavoured}>
@@ -25,7 +25,7 @@ const Card = ({ name, phone, email, image, favoured }) => {
         <p>{phone}</p>
         <p>{email}</p>
       </div>
-    </div>
+    </article>
   );
 };
 
